@@ -19,14 +19,17 @@ def main():
         scelta = menu()
 
         if scelta == "1":
+            #print(deposito.responsabile)
             nuovo_responsabile = input("Inserisci il nuovo responsabile: ")
-            # TODO: Aggiorna responsabile nel sistema
+            deposito.responsabile = nuovo_responsabile #aggiorno il nome del responsabile
+            print(f"Nuovo responsabile: {deposito.responsabile}")
 
         elif scelta == "2":
             while True:
                 try:
                     file_path = input("Inserisci il path del file da caricare: ").strip()
                     deposito.carica_file_strumenti(file_path)
+                    #print('caricamento riuscito')
                     break
                 except Exception as e:
                     print(e)
